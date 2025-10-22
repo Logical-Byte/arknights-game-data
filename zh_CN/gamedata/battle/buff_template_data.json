@@ -446938,7 +446938,25 @@
           "_triggerAllBuffs": false
         }
       ],
-      "ON_BEFORE_TRY_SET_HP_ZERO": [
+      "ON_OWNER_FINISH": [
+        {
+          "$type": "Torappu.Battle.Action.Nodes+FilterDeathReason, Assembly-CSharp",
+          "_source": "BUFF_OWNER",
+          "_finishReason": "REACH_EXIT"
+        },
+        {
+          "$type": "Torappu.Battle.Action.Nodes+IfNot, Assembly-CSharp"
+        },
+        {
+          "$type": "Torappu.Battle.Action.Nodes+FilterByBlackboardValue, Assembly-CSharp",
+          "_targetType": "BUFF_OWNER",
+          "_anotherBuff": false,
+          "_buffKey": null,
+          "_blackboardKey": "zero_mark",
+          "_valueToCompare": 0,
+          "_anotherKeyToCompare": null,
+          "_condType": "LE"
+        },
         {
           "$type": "Torappu.Battle.Action.Nodes+CalculateBlackboardValueViaParams, Assembly-CSharp",
           "_inputKey": "hp_cur",
@@ -446998,44 +447016,6 @@
           "_assignFirstBuff": true
         },
         {
-          "$type": "Torappu.Battle.Action.Nodes+TriggerBuffsByKeys, Assembly-CSharp",
-          "_targetType": "BUFF_SOURCE",
-          "_excludeThisBuff": false,
-          "_excludeInTriggerAll": false,
-          "_buffKeys": [
-            "mpctrl_boss_stage"
-          ],
-          "_forceTrigger": false,
-          "_triggerAllBuffs": false
-        }
-      ],
-      "ON_BUFF_START": [
-        {
-          "$type": "Torappu.Battle.Action.Nodes+AssignValueToBB, Assembly-CSharp",
-          "_blackboardKey": "point_ratio",
-          "_value": 0.0,
-          "_copyFromKey": null,
-          "_assignString": false
-        },
-        {
-          "$type": "Torappu.Battle.Action.Nodes+AssignBuffBlackboardFromOthers, Assembly-CSharp",
-          "_targetType": "BUFF_SOURCE",
-          "_blackboardKey": "hp_max",
-          "_valueKey": "hp_max",
-          "_buffKey": "mpctrl_boss_stage",
-          "_filterBuffSource": false,
-          "_sourceType": "TARGET"
-        },
-        {
-          "$type": "Torappu.Battle.Action.Nodes+AssignAttributeToBB, Assembly-CSharp",
-          "_targetType": "BUFF_OWNER",
-          "_attributeType": "MAX_HP",
-          "_scaleVar": "scale",
-          "_blackboardKey": "hp_cur"
-        }
-      ],
-      "ON_OWNER_KILLED": [
-        {
           "$type": "Torappu.Battle.Action.Nodes+AssignBuffBlackboard, Assembly-CSharp",
           "_targetType": "BUFF_SOURCE",
           "_blackboardKey": "kill",
@@ -447061,6 +447041,38 @@
           "$type": "Torappu.Battle.Action.Nodes+FinishBuff, Assembly-CSharp",
           "_decCntIfStack": false,
           "_updateOverrideMap": true
+        }
+      ],
+      "ON_BUFF_START": [
+        {
+          "$type": "Torappu.Battle.Action.Nodes+AssignValueToBB, Assembly-CSharp",
+          "_blackboardKey": "point_ratio",
+          "_value": 0.0,
+          "_copyFromKey": null,
+          "_assignString": false
+        },
+        {
+          "$type": "Torappu.Battle.Action.Nodes+AssignValueToBB, Assembly-CSharp",
+          "_blackboardKey": "zero_mark",
+          "_value": 0.0,
+          "_copyFromKey": null,
+          "_assignString": false
+        },
+        {
+          "$type": "Torappu.Battle.Action.Nodes+AssignBuffBlackboardFromOthers, Assembly-CSharp",
+          "_targetType": "BUFF_SOURCE",
+          "_blackboardKey": "hp_max",
+          "_valueKey": "hp_max",
+          "_buffKey": "mpctrl_boss_stage",
+          "_filterBuffSource": false,
+          "_sourceType": "TARGET"
+        },
+        {
+          "$type": "Torappu.Battle.Action.Nodes+AssignAttributeToBB, Assembly-CSharp",
+          "_targetType": "BUFF_OWNER",
+          "_attributeType": "MAX_HP",
+          "_scaleVar": "scale",
+          "_blackboardKey": "hp_cur"
         }
       ],
       "ON_BUFF_ENABLE": [
@@ -447131,6 +447143,100 @@
           ],
           "_forceTrigger": false,
           "_triggerAllBuffs": false
+        }
+      ],
+      "ON_BEFORE_TRY_SET_HP_ZERO": [
+        {
+          "$type": "Torappu.Battle.Action.Nodes+CalculateBlackboardValueViaParams, Assembly-CSharp",
+          "_inputKey": "hp_cur",
+          "_outputKey": "hp_cur",
+          "_multiplyParamKey": "",
+          "_dividedParamKey": "",
+          "_useRemainder": false,
+          "_addParamKey": "point_ratio",
+          "_minusParamKey": null,
+          "_minValueKey": null,
+          "_maxValueKey": null,
+          "_finalAbs": false,
+          "_finalCeil": false,
+          "_finalFloor": false,
+          "_finalRound": false,
+          "_useAbilityBlackboard": false,
+          "_abilityName": ""
+        },
+        {
+          "$type": "Torappu.Battle.Action.Nodes+CalculateBlackboardValueViaParams, Assembly-CSharp",
+          "_inputKey": "hp_cur",
+          "_outputKey": "hp_cur",
+          "_multiplyParamKey": "max_ratio",
+          "_dividedParamKey": "",
+          "_useRemainder": false,
+          "_addParamKey": "",
+          "_minusParamKey": null,
+          "_minValueKey": null,
+          "_maxValueKey": null,
+          "_finalAbs": false,
+          "_finalCeil": false,
+          "_finalFloor": false,
+          "_finalRound": false,
+          "_useAbilityBlackboard": false,
+          "_abilityName": ""
+        },
+        {
+          "$type": "Torappu.Battle.Action.Nodes+AssignBuffBlackboard, Assembly-CSharp",
+          "_targetType": "BUFF_SOURCE",
+          "_blackboardKey": "point_hp",
+          "_valueKey": "hp_cur",
+          "_buffKey": "mpctrl_boss_stage",
+          "_buffKeyAssignFrom": null,
+          "_assignString": false,
+          "_defaultValue": 0.0,
+          "_assignFirstBuff": true
+        },
+        {
+          "$type": "Torappu.Battle.Action.Nodes+AssignBuffBlackboard, Assembly-CSharp",
+          "_targetType": "BUFF_SOURCE",
+          "_blackboardKey": "reborn",
+          "_valueKey": "mark",
+          "_buffKey": "mpctrl_boss_stage",
+          "_buffKeyAssignFrom": null,
+          "_assignString": false,
+          "_defaultValue": 0.0,
+          "_assignFirstBuff": true
+        },
+        {
+          "$type": "Torappu.Battle.Action.Nodes+AssignBuffBlackboard, Assembly-CSharp",
+          "_targetType": "BUFF_SOURCE",
+          "_blackboardKey": "kill",
+          "_valueKey": "mark",
+          "_buffKey": "mpctrl_boss_stage",
+          "_buffKeyAssignFrom": null,
+          "_assignString": false,
+          "_defaultValue": 0.0,
+          "_assignFirstBuff": true
+        },
+        {
+          "$type": "Torappu.Battle.Action.Nodes+TriggerBuffsByKeys, Assembly-CSharp",
+          "_targetType": "BUFF_SOURCE",
+          "_excludeThisBuff": false,
+          "_excludeInTriggerAll": false,
+          "_buffKeys": [
+            "mpctrl_boss_stage"
+          ],
+          "_forceTrigger": false,
+          "_triggerAllBuffs": false
+        },
+        {
+          "$type": "Torappu.Battle.Action.Nodes+AssignValueToBB, Assembly-CSharp",
+          "_blackboardKey": "zero_mark",
+          "_value": 1.0,
+          "_copyFromKey": null,
+          "_assignString": false
+        },
+        {
+          "$type": "Torappu.Battle.Action.Nodes+FinishBuff, Assembly-CSharp",
+          "_decCntIfStack": false,
+          "_updateOverrideMap": true
         }
       ]
     }
@@ -447340,19 +447446,73 @@
               "_score": "BASIC"
             },
             {
-              "$type": "Torappu.Battle.Action.Nodes+FilterByBlackboardValue, Assembly-CSharp",
-              "_targetType": "BUFF_OWNER",
-              "_anotherBuff": false,
-              "_buffKey": null,
-              "_blackboardKey": "basic",
-              "_valueToCompare": 0,
-              "_anotherKeyToCompare": null,
-              "_condType": "GT"
-            },
-            {
-              "$type": "Torappu.Battle.Action.Nodes+FinishBuff, Assembly-CSharp",
-              "_decCntIfStack": false,
-              "_updateOverrideMap": true
+              "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+              "_conditionNode": {
+                "$type": "Torappu.Battle.Action.Nodes+FilterByBlackboardValue, Assembly-CSharp",
+                "_targetType": "BUFF_OWNER",
+                "_anotherBuff": false,
+                "_buffKey": null,
+                "_blackboardKey": "basic",
+                "_valueToCompare": 0,
+                "_anotherKeyToCompare": null,
+                "_condType": "GT"
+              },
+              "_succeedNodes": [
+                {
+                  "$type": "Torappu.Battle.Action.Nodes+FinishBuff, Assembly-CSharp",
+                  "_decCntIfStack": false,
+                  "_updateOverrideMap": true
+                }
+              ],
+              "_failNodes": [
+                {
+                  "$type": "Torappu.Battle.Action.Nodes+AssignValueToBB, Assembly-CSharp",
+                  "_blackboardKey": "point_compare",
+                  "_value": 0.9998999834060669,
+                  "_copyFromKey": null,
+                  "_assignString": false
+                },
+                {
+                  "$type": "Torappu.Battle.Action.Nodes+FilterByBlackboardValue, Assembly-CSharp",
+                  "_targetType": "BUFF_OWNER",
+                  "_anotherBuff": true,
+                  "_buffKey": "mpctrl_boss_stage",
+                  "_blackboardKey": "point_ratio_hp",
+                  "_valueToCompare": 0,
+                  "_anotherKeyToCompare": "point_compare",
+                  "_condType": "GE"
+                },
+                {
+                  "$type": "Torappu.Battle.Action.Nodes+FilterByBlackboardValue, Assembly-CSharp",
+                  "_targetType": "BUFF_OWNER",
+                  "_anotherBuff": false,
+                  "_buffKey": null,
+                  "_blackboardKey": "kill",
+                  "_valueToCompare": 0,
+                  "_anotherKeyToCompare": null,
+                  "_condType": "GT"
+                },
+                {
+                  "$type": "Torappu.Battle.Action.Nodes+AssignBuffBlackboard, Assembly-CSharp",
+                  "_targetType": "BUFF_OWNER",
+                  "_blackboardKey": "state",
+                  "_valueKey": "perfect_success",
+                  "_buffKey": "mpctrl_stage_start",
+                  "_buffKeyAssignFrom": null,
+                  "_assignString": false,
+                  "_defaultValue": 0.0,
+                  "_assignFirstBuff": true
+                },
+                {
+                  "$type": "Torappu.Battle.Action.Nodes+UpdateScoreManually, Assembly-CSharp",
+                  "_score": "ADVANCE"
+                },
+                {
+                  "$type": "Torappu.Battle.Action.Nodes+FinishBuff, Assembly-CSharp",
+                  "_decCntIfStack": false,
+                  "_updateOverrideMap": true
+                }
+              ]
             }
           ],
           "_failNodes": [
