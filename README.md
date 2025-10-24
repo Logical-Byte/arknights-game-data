@@ -1,1 +1,145 @@
 # arknights-game-data
+
+干员数据：`arknights-game-data\zh_CN\gamedata\excel\character_table.json`
+干员子职业ID：`arknights-game-data\zh_CN\gamedata\excel\uniequip_table.json`
+干员技能组：`arknights-game-data\zh_CN\gamedata\excel\skill_table.json`
+干员模组：`arknights-game-data\zh_CN\gamedata\excel\battle_equip_table.json`
+
+---
+
+字段说明
+
+- `character_table.json`
+  - `name`：干员名称
+  - `description`：干员描述
+  - `sortIndex`：排序索引
+  - `spTargetType`：特殊标签类型（如NONE表示无特殊标签）
+  - `spTargetId`：特殊标签ID（无特殊标签时为null）
+  - `canUseGeneralPotentialItem`：是否可以使用通用潜能道具
+  - `canUseActivityPotentialItem`：是否可以使用活动潜能道具
+  - `potentialItemId`：潜能道具ID
+  - `activityPotentialItemId`：活动潜能道具ID
+  - `classicPotentialItemId`：经典潜能道具ID
+  - `nationId`：势力ID
+  - `groupId`：组织ID
+  - `teamId`：团队ID
+  - `mainPower`：主要势力信息
+    - `nationId`：势力ID
+    - `groupId`：组织ID
+    - `teamId`：团队ID
+  - `subPower`：次要势力信息（部分干员无此项）
+    - `nationId`：势力ID
+    - `groupId`：组织ID
+    - `teamId`：团队ID
+  - `displayNumber`：干员编号
+  - `appellation`：干员代号
+  - `position`：部署位置（MELEE近战/RANGED远程）
+  - `tagList`：干员标签列表
+  - `itemUsage`：干员信物用途描述
+  - `itemDesc`：干员信物背景描述
+  - `itemObtainApproach`：干员信物获取途径
+  - `isNotObtainable`：是否无法通过常规途径获取
+  - `isSpChar`：是否为特殊干员
+  - `maxPotentialLevel`：最大潜能等级
+  - `rarity`：稀有度等级（TIER_1至TIER_6）
+  - `profession`：职业类型
+  - `subProfessionId`：子职业ID
+  - `trait`：干员特性描述
+  - `phases`：干员阶段信息
+    - `characterPrefabKey`：预制体资源键值
+    - `rangeId`：攻击范围ID
+    - `maxLevel`：该阶段最大等级
+    - `attributesKeyFrames`：属性关键帧
+      - `level`：对应等级
+      - `data`：属性数据（maxHp/atk/def等）
+  - `skills`：技能列表
+  - `talents`：天赋列表
+    - `candidates`：天赋候选列表
+      - `name`：天赋名称
+      - `description`：天赋描述
+  - `potentialRanks`：潜能提升效果
+    - `type`：提升类型
+    - `description`：效果描述
+  - `favorKeyFrames`：信赖度加成属性
+    - `level`：信赖等级
+    - `data`：加成属性数据
+
+- `uniequip_table.json`
+  - `subProfDict`：子职业字典，包含所有干员子职业信息
+    - `[子职业ID]`：以子职业ID为键的对象（如pioneer、charger等）
+      - `subProfessionId`：子职业唯一标识符
+      - `subProfessionName`：子职业名称（如尖兵、冲锋手等）
+      - `subProfessionCatagory`：子职业分类编号（用于游戏内分类显示）
+
+- `skill_table.json`
+  - `skillId`：技能唯一标识符
+  - `iconId`：技能图标资源ID（可为null）
+  - `hidden`：是否隐藏技能（布尔值）
+  - `levels`：技能等级列表
+    - `name`：技能名称
+    - `rangeId`：攻击范围ID（可为null）
+    - `description`：技能描述（含占位符文本，如`<@ba.vup>{key:value}</>`表示动态数值替换）
+    - `skillType`：技能激活类型（如AUTO自动触发、MANUAL手动触发、PASSIVE被动生效）
+    - `durationType`：持续时间类型（如NONE无持续时间、TIME持续时间、PERMANENT永久生效）
+    - `spData`：技能点数据
+      - `spType`：SP恢复类型（如INCREASE_WITH_TIME随时间恢复、INCREASE_WHEN_ATTACK攻击时恢复）
+      - `levelUpCost`：升级消耗（可为null）
+      - `spCost`：技能所需SP值
+      - `initSp`：初始SP值
+      - `increment`：SP恢复量（攻击恢复时表示每次攻击恢复值）
+      - `maxChargeTime`：最大充能次数
+    - `prefabId`：技能预制体资源ID
+    - `duration`：技能持续时间（秒）
+    - `blackboard`：技能参数黑板
+      - `key`：参数键名（如extra_atk_scale额外攻击倍率、append_atk_scale追加攻击倍率）
+      - `value`：参数数值（如0.8表示80%）
+      - `valueStr`：参数文本描述（可为null）
+- `battle_equip_table.json`
+  - `[装备ID]`：以装备ID为键的对象（如uniequip_003_rosmon）
+    - `phases`：装备等级阶段数组
+      - `equipLevel`：装备等级（1,2,3对应不同等级）
+      - `parts`：装备部件数组，每个部件具有特定功能
+        - `resKey`：资源键值（可为null）
+        - `target`：效果目标类型（如TALENT天赋、TRAIT特性、DISPLAY显示、OVERWRITE_BATTLE_DATA战斗数据覆盖、TALENT_DATA_ONLY天赋数据专用）
+        - `isToken`：是否为召唤物效果
+        - `validInGameTag`：适用的游戏标签（可为null）
+        - `validInMapTag`：适用的地图标签（可为null）
+        - `addOrOverrideTalentDataBundle`：天赋数据修改包
+          - `candidates`：天赋候选列表
+            - `name`：天赋名称
+            - `description`：天赋描述
+            - `displayRangeId`：是否显示范围ID
+            - `upgradeDescription`：升级描述（含特殊格式占位符，如`<@ba.talpu>（+2%）</>`表示潜能额外加成）
+            - `talentIndex`：天赋索引（-1表示特殊系统天赋）
+            - `unlockCondition`：解锁条件
+              - `phase`：精英阶段（PHASE_1=精英1, PHASE_2=精英2）
+              - `level`：干员等级（需达到的最低等级阈值，如50/60级）
+            - `requiredPotentialRank`：所需潜能等级
+            - `prefabKey`：预制体资源键值（如"2"表示天赋系统预制体，"10"表示特殊系统预制体）
+            - `rangeId`：范围ID
+            - `blackboard`：参数黑板，与技能中的相似。部分召唤物相关参数使用特殊格式键名（如`bgsnow_token[def_down]_1.def`表示召唤物特定属性），部分控制效果参数（如`sluggish`表示停顿时间）
+            - `tokenKey`：召唤物键值（格式为token_<ID>_<名称>，如token_10026_bgsnow_subbow）
+            - `isHideTalent`：是否隐藏天赋（true表示不在界面显示）
+        - `overrideTraitDataBundle`：特性数据修改包
+          - `candidates`：特性候选列表
+            - `additionalDescription`：附加描述（含特殊格式占位符，如`<@ba.kw>减少</>`表示关键数值）
+            - `overrideDescripton`：覆盖描述（替代原有特性描述）
+            - `unlockCondition`：解锁条件
+              - `phase`：精英阶段
+              - `level`：干员等级
+            - `requiredPotentialRank`：所需潜能等级
+            - `blackboard`：参数黑板
+              - `key`：参数类型（如def防御、magic_resistance法术抗性、duration持续时间、sp_recovery_per_sec技力恢复速度、projectile_extend投射物持续时间延长、projectile_extend_max投射物最大延长、sluggish停顿时间、ep_damage_scale元素损伤倍率等）
+              - `value`：参数数值
+              - `valueStr`：参数文本描述（可为null）
+            - `prefabKey`：预制体资源键值
+            - `rangeId`：范围ID
+      - `attributeBlackboard`：装备属性加成
+        - `key`：属性类型（如max_hp生命值、atk攻击、def防御、attack_speed攻击速度、respawn_time再部署时间）
+        - `value`：加成数值
+        - `valueStr`：数值文本描述（可为null）
+      - `tokenAttributeBlackboard`：召唤物属性加成（键为tokenID）
+        - `[tokenID]`：召唤物ID对应的属性加成数组
+          - `key`：属性类型（如max_deploy_count最大部署数量）
+          - `value`：加成数值（正数为提升，负数为降低，如respawn_time: -25.0表示减少25秒）
+          - `valueStr`：数值文本描述（可为null））
