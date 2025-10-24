@@ -1,13 +1,15 @@
 # arknights-game-data
 
-干员数据：`arknights-game-data\zh_CN\gamedata\excel\character_table.json`
-干员子职业ID：`arknights-game-data\zh_CN\gamedata\excel\uniequip_table.json`
-干员技能组：`arknights-game-data\zh_CN\gamedata\excel\skill_table.json`
-干员模组：`arknights-game-data\zh_CN\gamedata\excel\battle_equip_table.json`
+基于 [MooncellWiki/torappu](https://github.com/MooncellWiki/torappu) 解析游戏数据。
 
----
+## 主要内容
 
-字段说明
+- 干员数据：`zh_CN/gamedata/excel/character_table.json`
+- 干员子职业ID：`zh_CN/gamedata/excel/uniequip_table.json`
+- 干员技能组：`zh_CN/gamedata/excel/skill_table.json`
+- 干员模组：`zh_CN/gamedata/excel/battle_equip_table.json`
+
+## 字段说明
 
 - `character_table.json`
   - `name`：干员名称
