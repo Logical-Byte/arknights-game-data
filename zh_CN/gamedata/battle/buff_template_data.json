@@ -492184,6 +492184,24 @@
       ]
     }
   },
+  "enemy_dyjsww_play_bgm": {
+    "templateKey": "enemy_dyjsww_play_bgm",
+    "effectKey": "",
+    "onEventPriority": "DEFAULT",
+    "eventToActions": {
+      "ON_BUFF_TRIGGER": [
+        {
+          "$type": "Torappu.Battle.Action.Nodes+PlayBGM, Assembly-CSharp",
+          "_needSourceStateRunning": true
+        },
+        {
+          "$type": "Torappu.Battle.Action.Nodes+FinishBuff, Assembly-CSharp",
+          "_decCntIfStack": false,
+          "_updateOverrideMap": true
+        }
+      ]
+    }
+  },
   "enemy_dyjsww_direction_record": {
     "templateKey": "enemy_dyjsww_direction_record",
     "effectKey": "",

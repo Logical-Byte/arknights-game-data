@@ -317613,6 +317613,11 @@
                 "key": "LevelUp.interval",
                 "value": 500.0,
                 "valueStr": null
+              },
+              {
+                "key": "ActiveRgcssm.bgm\n",
+                "value": 0.0,
+                "valueStr": "rl5boss4_2"
               }
             ],
             "skills": [
