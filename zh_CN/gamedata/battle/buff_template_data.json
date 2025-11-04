@@ -207473,58 +207473,6 @@
       ]
     }
   },
-  "enemy_spnwiz_reborn_ctrl": {
-    "templateKey": "enemy_spnwiz_reborn_ctrl",
-    "effectKey": "",
-    "onEventPriority": "DEFAULT",
-    "eventToActions": {
-      "ON_BEFORE_TRY_SET_HP_ZERO": [
-        {
-          "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
-          "_conditionNode": {
-            "$type": "Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp",
-            "_targetType": "BUFF_OWNER",
-            "_buffKeys": [
-              "trap_bonore_in_range[default]"
-            ],
-            "isAND": true,
-            "_loadFromBlackboard": false,
-            "_checkBuffSource": false,
-            "_buffSourceType": "BUFF_SOURCE",
-            "_checkSourceHost": false
-          },
-          "_succeedNodes": [
-            {
-              "$type": "Torappu.Battle.Action.Nodes+SwitchToRebornState, Assembly-CSharp",
-              "_targetType": "BUFF_OWNER",
-              "_isForce": false
-            }
-          ],
-          "_failNodes": [
-            {
-              "$type": "Torappu.Battle.Action.Nodes+FinishBuff, Assembly-CSharp",
-              "_decCntIfStack": false,
-              "_updateOverrideMap": true
-            },
-            {
-              "$type": "Torappu.Battle.Action.Nodes+FinishBuffsById, Assembly-CSharp",
-              "_buffKey": "enemy_spnwiz_undeadable",
-              "_loadFromBlackboard": false,
-              "_decCntIfStack": false,
-              "_updateOverrideMap": true,
-              "_targetType": "BUFF_OWNER",
-              "_checkBuffSource": false,
-              "_sourceType": "BUFF_SOURCE",
-              "_alsoClearNullSource": false,
-              "_finishHostBuff": false,
-              "_decCntKey": null,
-              "_decCnt": 1
-            }
-          ]
-        }
-      ]
-    }
-  },
   "enemy_spnwiz_bonore[action]": {
     "templateKey": "enemy_spnwiz_bonore[action]",
     "effectKey": "",
@@ -207567,6 +207515,129 @@
           "_useFirstActiveAbility": false,
           "_useCastResult": false,
           "_triggerHostAbility": false
+        }
+      ]
+    }
+  },
+  "enemy_spnwiz_reborn_ctrl": {
+    "templateKey": "enemy_spnwiz_reborn_ctrl",
+    "effectKey": "",
+    "onEventPriority": "DEFAULT",
+    "eventToActions": {
+      "ON_BEFORE_TRY_SET_HP_ZERO": [
+        {
+          "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+          "_conditionNode": {
+            "$type": "Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp",
+            "_targetType": "BUFF_OWNER",
+            "_buffKeys": [
+              "trap_bonore_in_range[default]"
+            ],
+            "isAND": true,
+            "_loadFromBlackboard": false,
+            "_checkBuffSource": false,
+            "_buffSourceType": "BUFF_SOURCE",
+            "_checkSourceHost": false
+          },
+          "_succeedNodes": [
+            {
+              "$type": "Torappu.Battle.Action.Nodes+CreateBuff, Assembly-CSharp",
+              "_buff": {
+                "attributes": {
+                  "abnormalFlags": [
+                    "INVINCIBLE"
+                  ],
+                  "abnormalImmunes": [],
+                  "abnormalAntis": [],
+                  "abnormalCombos": [],
+                  "abnormalComboImmunes": [],
+                  "attributeModifiers": []
+                },
+                "buffKey": "spnwiz_reborn[invincible]",
+                "loadFromDB": false,
+                "isDurableBuff": false,
+                "isDamageMissable": false,
+                "isSilenceable": false,
+                "isStunnable": false,
+                "isFreezable": false,
+                "isLevitatable": false,
+                "statusResistable": "AUTOMATIC",
+                "templateKey": "empty",
+                "disableOverride": false,
+                "overrideKey": null,
+                "overrideType": "UNIQUE",
+                "maxStackCnt": 1,
+                "refreshRemainingTimeWhenStackMax": false,
+                "clearAllStackCntWhenTimeUp": false,
+                "maxValidStackCnt": -1,
+                "independentCharacterSource": false,
+                "overrideEffectKey": null,
+                "overrideOnEventPriority": false,
+                "onEventPriority": "DEFAULT",
+                "audioSignal": null,
+                "lifeTimeType": "LIMITED",
+                "takeSnapshotWhenExtend": false,
+                "durationKey": "fixed_duration",
+                "lifeTime": 0.009999999776482582,
+                "triggerLifeType": "IMMEDIATELY",
+                "triggerCnt": 0,
+                "triggerInterval": -1.0,
+                "waitFirstTriggerInterval": true,
+                "firstTriggerInterval": -1.0,
+                "priority": -1,
+                "priorityBBKeys": [],
+                "stripBlackboardParamsWithBuffKey": false,
+                "blackboard": []
+              },
+              "_buffOwner": "BUFF_OWNER",
+              "_useSpecialBuffSource": false,
+              "_specialBuffSource": "BUFF_SOURCE",
+              "_isDerivedBuff": false,
+              "_finishDerivedBuffIfParentFinish": false,
+              "_inherateSourceProjectileFromParentBuff": false,
+              "_hookEffectKeyFromSourceProjectile": false
+            },
+            {
+              "$type": "Torappu.Battle.Action.Nodes+SwitchToRebornState, Assembly-CSharp",
+              "_targetType": "BUFF_OWNER",
+              "_isForce": false
+            },
+            {
+              "$type": "Torappu.Battle.Action.Nodes+FinishBuffsById, Assembly-CSharp",
+              "_buffKey": "spnwiz_reborn[invincible]",
+              "_loadFromBlackboard": false,
+              "_decCntIfStack": false,
+              "_updateOverrideMap": true,
+              "_targetType": "BUFF_OWNER",
+              "_checkBuffSource": false,
+              "_sourceType": "BUFF_SOURCE",
+              "_alsoClearNullSource": false,
+              "_finishHostBuff": false,
+              "_decCntKey": null,
+              "_decCnt": 1
+            }
+          ],
+          "_failNodes": [
+            {
+              "$type": "Torappu.Battle.Action.Nodes+FinishBuff, Assembly-CSharp",
+              "_decCntIfStack": false,
+              "_updateOverrideMap": true
+            },
+            {
+              "$type": "Torappu.Battle.Action.Nodes+FinishBuffsById, Assembly-CSharp",
+              "_buffKey": "enemy_spnwiz_undeadable",
+              "_loadFromBlackboard": false,
+              "_decCntIfStack": false,
+              "_updateOverrideMap": true,
+              "_targetType": "BUFF_OWNER",
+              "_checkBuffSource": false,
+              "_sourceType": "BUFF_SOURCE",
+              "_alsoClearNullSource": false,
+              "_finishHostBuff": false,
+              "_decCntKey": null,
+              "_decCnt": 1
+            }
+          ]
         }
       ]
     }
@@ -333357,7 +333428,7 @@
     "effectKey": "",
     "onEventPriority": "DEFAULT",
     "eventToActions": {
-      "ON_BUFF_TRIGGER": [
+      "ON_BUFF_FINISH": [
         {
           "$type": "Torappu.Battle.Action.Nodes+TriggerAbility, Assembly-CSharp",
           "_ownerType": "BUFF_OWNER",
@@ -333520,6 +333591,34 @@
           "_failNodes": null,
           "_isAnd": false
         }
+      ],
+      "ON_BUFF_TRIGGER": [
+        {
+          "$type": "Torappu.Battle.Action.Nodes+IfConditions, Assembly-CSharp",
+          "_conditionsNode": [
+            {
+              "$type": "Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp",
+              "_targetType": "BUFF_SOURCE",
+              "_buffKeys": [
+                "svash2_s_3"
+              ],
+              "isAND": true,
+              "_loadFromBlackboard": false,
+              "_checkBuffSource": false,
+              "_buffSourceType": "BUFF_SOURCE",
+              "_checkSourceHost": false
+            }
+          ],
+          "_succeedNodes": null,
+          "_failNodes": [
+            {
+              "$type": "Torappu.Battle.Action.Nodes+FinishBuff, Assembly-CSharp",
+              "_decCntIfStack": false,
+              "_updateOverrideMap": true
+            }
+          ],
+          "_isAnd": false
+        }
       ]
     }
   },
@@ -333588,9 +333687,9 @@
             "takeSnapshotWhenExtend": false,
             "durationKey": null,
             "lifeTime": 0.0,
-            "triggerLifeType": "IMMEDIATELY",
+            "triggerLifeType": "INFINITY",
             "triggerCnt": 0,
-            "triggerInterval": -1.0,
+            "triggerInterval": 1.0,
             "waitFirstTriggerInterval": true,
             "firstTriggerInterval": -1.0,
             "priority": -1,
@@ -333669,9 +333768,9 @@
             "takeSnapshotWhenExtend": false,
             "durationKey": null,
             "lifeTime": 0.0,
-            "triggerLifeType": "IMMEDIATELY",
+            "triggerLifeType": "INFINITY",
             "triggerCnt": 0,
-            "triggerInterval": -1.0,
+            "triggerInterval": 1.0,
             "waitFirstTriggerInterval": true,
             "firstTriggerInterval": -1.0,
             "priority": -1,
@@ -334711,7 +334810,7 @@
               "_checkTargetAlive": false,
               "_modifierKey": "",
               "_maxTargetCountKey": "max_target",
-              "_filterType": "HATRED_ASC"
+              "_filterType": "HATRED_DES"
             },
             {
               "$type": "Torappu.Battle.Action.Nodes+AlwaysNext, Assembly-CSharp"
@@ -430631,6 +430730,286 @@
       ]
     }
   },
+  "hsgma2_e_003_tr_output": {
+    "templateKey": "hsgma2_e_003_tr_output",
+    "effectKey": "",
+    "onEventPriority": "DEFAULT",
+    "eventToActions": {
+      "ON_OUTPUT_DAMAGE": [
+        {
+          "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+          "_conditionNode": {
+            "$type": "Torappu.Battle.Action.Nodes+CheckCharSkillAffecting, Assembly-CSharp",
+            "_targetType": "BUFF_OWNER"
+          },
+          "_succeedNodes": [
+            {
+              "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+              "_conditionNode": {
+                "$type": "Torappu.Battle.Action.Nodes+CheckModifierContainsKey, Assembly-CSharp",
+                "_customKey": "artsprotector_e_002_tr"
+              },
+              "_succeedNodes": null,
+              "_failNodes": [
+                {
+                  "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+                  "_conditionNode": {
+                    "$type": "Torappu.Battle.Action.Nodes+FilterDamageModifer, Assembly-CSharp",
+                    "_filterAttackType": true,
+                    "_attackTypeFilter": "NORMAL",
+                    "_filterDamageType": false,
+                    "_damageMask": "NONE",
+                    "_filterSharedMask": false,
+                    "_sharedFlag": "IS_CONTINUOUS",
+                    "_filterModifierSource": false,
+                    "_source": "BUFF_OWNER",
+                    "_filterBySourceId": false,
+                    "_sourceId": null,
+                    "_checkHasScource": false,
+                    "_isNoSource": false,
+                    "_filterModifierCancelled": false
+                  },
+                  "_succeedNodes": [
+                    {
+                      "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+                      "_conditionNode": {
+                        "$type": "Torappu.Battle.Action.Nodes+FilterAbilityFamily, Assembly-CSharp",
+                        "_familyGroupMask": "ATTACK_OR_COMBAT"
+                      },
+                      "_succeedNodes": [
+                        {
+                          "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+                          "_conditionNode": {
+                            "$type": "Torappu.Battle.Action.Nodes+IfTargetEqual, Assembly-CSharp",
+                            "_target1": "ABILITY_OWNER",
+                            "_target2": "BUFF_OWNER",
+                            "_equalIfBothNull": false
+                          },
+                          "_succeedNodes": [
+                            {
+                              "$type": "Torappu.Battle.Action.Nodes+AdvancedApplyDamage, Assembly-CSharp",
+                              "_sourceType": "BUFF_OWNER",
+                              "_targetType": "MODIFIER_TARGET",
+                              "_damageType": "MAGICAL",
+                              "_atkScaleVar": "atk_scale",
+                              "_defaultAtkScale": 1.0,
+                              "_applyWay": "NONE",
+                              "_baseOnHostAtk": false,
+                              "_emitSourceOnCalculateDamage": false,
+                              "_attackType": "NORMAL",
+                              "_forceUseProjectileCachedAtk": false,
+                              "_ignoreForSp": false,
+                              "_ignoreMissFlag": "NONE",
+                              "_ignoreCancelReasonMask": "NONE",
+                              "_modifierKey": "artsprotector_e_002_tr",
+                              "_assignRealDamageToBB": false,
+                              "_skipModifierEvent": false,
+                              "_noSource": false,
+                              "_getCachedAtkFromBlackboard": false,
+                              "_cachedAtkKey": "atk",
+                              "_setSharedFlag": false,
+                              "_sharedFlagIndex": "IS_CONTINUOUS"
+                            }
+                          ],
+                          "_failNodes": null
+                        }
+                      ],
+                      "_failNodes": null
+                    }
+                  ],
+                  "_failNodes": null
+                }
+              ]
+            }
+          ],
+          "_failNodes": [
+            {
+              "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+              "_conditionNode": {
+                "$type": "Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp",
+                "_targetType": "BUFF_OWNER",
+                "_buffKeys": [
+                  "hsgma2_s_3[before_dead]"
+                ],
+                "isAND": true,
+                "_loadFromBlackboard": false,
+                "_checkBuffSource": false,
+                "_buffSourceType": "BUFF_SOURCE",
+                "_checkSourceHost": false
+              },
+              "_succeedNodes": [
+                {
+                  "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+                  "_conditionNode": {
+                    "$type": "Torappu.Battle.Action.Nodes+CheckModifierContainsKey, Assembly-CSharp",
+                    "_customKey": "artsprotector_e_002_tr"
+                  },
+                  "_succeedNodes": null,
+                  "_failNodes": [
+                    {
+                      "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+                      "_conditionNode": {
+                        "$type": "Torappu.Battle.Action.Nodes+FilterDamageModifer, Assembly-CSharp",
+                        "_filterAttackType": true,
+                        "_attackTypeFilter": "NORMAL",
+                        "_filterDamageType": false,
+                        "_damageMask": "NONE",
+                        "_filterSharedMask": false,
+                        "_sharedFlag": "IS_CONTINUOUS",
+                        "_filterModifierSource": false,
+                        "_source": "BUFF_OWNER",
+                        "_filterBySourceId": false,
+                        "_sourceId": null,
+                        "_checkHasScource": false,
+                        "_isNoSource": false,
+                        "_filterModifierCancelled": false
+                      },
+                      "_succeedNodes": [
+                        {
+                          "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+                          "_conditionNode": {
+                            "$type": "Torappu.Battle.Action.Nodes+FilterAbilityFamily, Assembly-CSharp",
+                            "_familyGroupMask": "ATTACK_OR_COMBAT"
+                          },
+                          "_succeedNodes": [
+                            {
+                              "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+                              "_conditionNode": {
+                                "$type": "Torappu.Battle.Action.Nodes+IfTargetEqual, Assembly-CSharp",
+                                "_target1": "ABILITY_OWNER",
+                                "_target2": "BUFF_OWNER",
+                                "_equalIfBothNull": false
+                              },
+                              "_succeedNodes": [
+                                {
+                                  "$type": "Torappu.Battle.Action.Nodes+AdvancedApplyDamage, Assembly-CSharp",
+                                  "_sourceType": "BUFF_OWNER",
+                                  "_targetType": "MODIFIER_TARGET",
+                                  "_damageType": "MAGICAL",
+                                  "_atkScaleVar": "atk_scale",
+                                  "_defaultAtkScale": 1.0,
+                                  "_applyWay": "NONE",
+                                  "_baseOnHostAtk": false,
+                                  "_emitSourceOnCalculateDamage": false,
+                                  "_attackType": "NORMAL",
+                                  "_forceUseProjectileCachedAtk": false,
+                                  "_ignoreForSp": false,
+                                  "_ignoreMissFlag": "NONE",
+                                  "_ignoreCancelReasonMask": "NONE",
+                                  "_modifierKey": "artsprotector_e_002_tr",
+                                  "_assignRealDamageToBB": false,
+                                  "_skipModifierEvent": false,
+                                  "_noSource": false,
+                                  "_getCachedAtkFromBlackboard": false,
+                                  "_cachedAtkKey": "atk",
+                                  "_setSharedFlag": false,
+                                  "_sharedFlagIndex": "IS_CONTINUOUS"
+                                }
+                              ],
+                              "_failNodes": null
+                            }
+                          ],
+                          "_failNodes": null
+                        }
+                      ],
+                      "_failNodes": null
+                    }
+                  ]
+                }
+              ],
+              "_failNodes": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "hsgma2_e_003_tr_take": {
+    "templateKey": "hsgma2_e_003_tr_take",
+    "effectKey": "",
+    "onEventPriority": "DEFAULT",
+    "eventToActions": {
+      "ON_TAKE_DAMAGE": [
+        {
+          "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+          "_conditionNode": {
+            "$type": "Torappu.Battle.Action.Nodes+CheckCharSkillAffecting, Assembly-CSharp",
+            "_targetType": "BUFF_OWNER"
+          },
+          "_succeedNodes": [
+            {
+              "$type": "Torappu.Battle.Action.Nodes+AdvancedApplyDamage, Assembly-CSharp",
+              "_sourceType": "BUFF_OWNER",
+              "_targetType": "MODIFIER_SOURCE",
+              "_damageType": "MAGICAL",
+              "_atkScaleVar": "atk_scale",
+              "_defaultAtkScale": 1.0,
+              "_applyWay": "NONE",
+              "_baseOnHostAtk": false,
+              "_emitSourceOnCalculateDamage": false,
+              "_attackType": "NORMAL",
+              "_forceUseProjectileCachedAtk": false,
+              "_ignoreForSp": false,
+              "_ignoreMissFlag": "NONE",
+              "_ignoreCancelReasonMask": "NONE",
+              "_modifierKey": "artsprotector_e_002_tr",
+              "_assignRealDamageToBB": false,
+              "_skipModifierEvent": false,
+              "_noSource": false,
+              "_getCachedAtkFromBlackboard": false,
+              "_cachedAtkKey": "atk",
+              "_setSharedFlag": false,
+              "_sharedFlagIndex": "IS_CONTINUOUS"
+            }
+          ],
+          "_failNodes": [
+            {
+              "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+              "_conditionNode": {
+                "$type": "Torappu.Battle.Action.Nodes+CheckContainsBuff, Assembly-CSharp",
+                "_targetType": "BUFF_OWNER",
+                "_buffKeys": [
+                  "hsgma2_s_3[before_dead]"
+                ],
+                "isAND": true,
+                "_loadFromBlackboard": false,
+                "_checkBuffSource": false,
+                "_buffSourceType": "BUFF_SOURCE",
+                "_checkSourceHost": false
+              },
+              "_succeedNodes": [
+                {
+                  "$type": "Torappu.Battle.Action.Nodes+AdvancedApplyDamage, Assembly-CSharp",
+                  "_sourceType": "BUFF_OWNER",
+                  "_targetType": "MODIFIER_SOURCE",
+                  "_damageType": "MAGICAL",
+                  "_atkScaleVar": "atk_scale",
+                  "_defaultAtkScale": 1.0,
+                  "_applyWay": "NONE",
+                  "_baseOnHostAtk": false,
+                  "_emitSourceOnCalculateDamage": false,
+                  "_attackType": "NORMAL",
+                  "_forceUseProjectileCachedAtk": false,
+                  "_ignoreForSp": false,
+                  "_ignoreMissFlag": "NONE",
+                  "_ignoreCancelReasonMask": "NONE",
+                  "_modifierKey": "artsprotector_e_002_tr",
+                  "_assignRealDamageToBB": false,
+                  "_skipModifierEvent": false,
+                  "_noSource": false,
+                  "_getCachedAtkFromBlackboard": false,
+                  "_cachedAtkKey": "atk",
+                  "_setSharedFlag": false,
+                  "_sharedFlagIndex": "IS_CONTINUOUS"
+                }
+              ],
+              "_failNodes": null
+            }
+          ]
+        }
+      ]
+    }
+  },
   "siege2_e_003_t_2": {
     "templateKey": "siege2_e_003_t_2",
     "effectKey": "",
@@ -469353,8 +469732,38 @@
       ],
       "ON_BUFF_FINISH": [
         {
-          "$type": "Torappu.Battle.Action.Nodes+MakeTargetRebornInCooperate, Assembly-CSharp",
-          "_sourceType": "BUFF_OWNER"
+          "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+          "_conditionNode": {
+            "$type": "Torappu.Battle.Action.Nodes+CheckTargetProfession, Assembly-CSharp",
+            "_targetType": "BUFF_OWNER",
+            "_profession": [
+              "TOKEN",
+              "TRAP"
+            ],
+            "_readProfessionFromBlackboard": false,
+            "_checkSubProfession": false,
+            "_subProfessions": null
+          },
+          "_succeedNodes": [
+            {
+              "$type": "Torappu.Battle.Action.Nodes+InstantKill, Assembly-CSharp",
+              "_targetType": "BUFF_OWNER",
+              "_killSource": false,
+              "_noSource": false,
+              "_withdrawIfRallyPoint": false,
+              "_resultIfInRallyPointMode": false,
+              "_skipReborn": true,
+              "_noReason": true,
+              "_markReachExit": false,
+              "_switchState": false
+            }
+          ],
+          "_failNodes": [
+            {
+              "$type": "Torappu.Battle.Action.Nodes+MakeTargetRebornInCooperate, Assembly-CSharp",
+              "_sourceType": "BUFF_OWNER"
+            }
+          ]
         }
       ]
     }
@@ -514010,6 +514419,33 @@
           "_checkTargetFree": false
         },
         {
+          "$type": "Torappu.Battle.Action.Nodes+CheckAbnormalFlag, Assembly-CSharp",
+          "_abnormalFlag": "LEVITATE",
+          "_targetType": "BUFF_SOURCE",
+          "_isUnset": true,
+          "_abnormalFlagKey": ""
+        },
+        {
+          "$type": "Torappu.Battle.Action.Nodes+CheckAbnormalFlag, Assembly-CSharp",
+          "_abnormalFlag": "FROZEN",
+          "_targetType": "BUFF_SOURCE",
+          "_isUnset": true,
+          "_abnormalFlagKey": ""
+        },
+        {
+          "$type": "Torappu.Battle.Action.Nodes+CheckAbnormalFlag, Assembly-CSharp",
+          "_abnormalFlag": "STUNNED",
+          "_targetType": "BUFF_SOURCE",
+          "_isUnset": true,
+          "_abnormalFlagKey": ""
+        },
+        {
+          "$type": "Torappu.Battle.Action.Nodes+CheckAbnormalCombo, Assembly-CSharp",
+          "_abnormalCombo": "SLEEPING",
+          "_targetType": "BUFF_SOURCE",
+          "_isUnset": true
+        },
+        {
           "$type": "Torappu.Battle.Action.Nodes+SummonEnemyWithRuntimeRoute, Assembly-CSharp",
           "_source": "SOURCE",
           "_target": "SOURCE",
@@ -514074,33 +514510,6 @@
           "_avoidHighland": false,
           "_noEndPosition": false,
           "_force": false
-        },
-        {
-          "$type": "Torappu.Battle.Action.Nodes+CheckAbnormalFlag, Assembly-CSharp",
-          "_abnormalFlag": "LEVITATE",
-          "_targetType": "BUFF_SOURCE",
-          "_isUnset": true,
-          "_abnormalFlagKey": ""
-        },
-        {
-          "$type": "Torappu.Battle.Action.Nodes+CheckAbnormalFlag, Assembly-CSharp",
-          "_abnormalFlag": "FROZEN",
-          "_targetType": "BUFF_SOURCE",
-          "_isUnset": true,
-          "_abnormalFlagKey": ""
-        },
-        {
-          "$type": "Torappu.Battle.Action.Nodes+CheckAbnormalFlag, Assembly-CSharp",
-          "_abnormalFlag": "STUNNED",
-          "_targetType": "BUFF_SOURCE",
-          "_isUnset": true,
-          "_abnormalFlagKey": ""
-        },
-        {
-          "$type": "Torappu.Battle.Action.Nodes+CheckAbnormalCombo, Assembly-CSharp",
-          "_abnormalCombo": "SLEEPING",
-          "_targetType": "BUFF_SOURCE",
-          "_isUnset": true
         },
         {
           "$type": "Torappu.Battle.Action.Nodes+SwitchMode, Assembly-CSharp",
