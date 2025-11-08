@@ -169043,6 +169043,17 @@
     "eventToActions": {
       "ON_BUFF_START": [
         {
+          "$type": "Torappu.Battle.Action.Nodes+IfTarget, Assembly-CSharp",
+          "_targetType": "BUFF_OWNER",
+          "_motionMask": "ALL",
+          "_checkTargetAlive": true,
+          "_checkApplyWay": false,
+          "_checkTargetUnitType": false,
+          "_unitType": "ENEMY",
+          "_applyWay": "NONE",
+          "_checkTargetFree": false
+        },
+        {
           "$type": "Torappu.Battle.Action.Nodes+SwitchMode, Assembly-CSharp",
           "_modeIndex": 1,
           "_loadModeFromBlackboard": false,
