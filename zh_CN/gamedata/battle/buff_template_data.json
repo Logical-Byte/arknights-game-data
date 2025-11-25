@@ -281707,6 +281707,149 @@
           "_cachedDeltaValueToBBKey": "",
           "_customKey": ""
         }
+      ],
+      "ON_OUTPUT_DAMAGE": [
+        {
+          "$type": "Torappu.Battle.Action.Nodes+DamageScale, Assembly-CSharp",
+          "_filterDamageType": false,
+          "_damageMask": "NONE",
+          "_filterApplyWay": false,
+          "_applyWayFilter": "NONE",
+          "_isOneMinus": false,
+          "_isStackable": false,
+          "_isValidStackCnt": false,
+          "_cachedDeltaValueToBBKey": "",
+          "_customKey": ""
+        }
+      ],
+      "ON_BUFF_START": [
+        {
+          "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+          "_conditionNode": {
+            "$type": "Torappu.Battle.Action.Nodes+AutochessFilterByChessLevel, Assembly-CSharp",
+            "_targetType": "BUFF_OWNER",
+            "_condType": "EQUALS",
+            "_levelToCompare": 1
+          },
+          "_succeedNodes": [
+            {
+              "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+              "_conditionNode": {
+                "$type": "Torappu.Battle.Action.Nodes+FilterByTargetDataLevel, Assembly-CSharp",
+                "_target": "BUFF_OWNER",
+                "_condType": "EQUALS",
+                "_level": 50
+              },
+              "_succeedNodes": [
+                {
+                  "$type": "Torappu.Battle.Action.Nodes+AssignValueToBB, Assembly-CSharp",
+                  "_blackboardKey": "damage_scale",
+                  "_value": 0.0,
+                  "_copyFromKey": "damage_scale_extra",
+                  "_assignString": false
+                }
+              ],
+              "_failNodes": [
+                {
+                  "$type": "Torappu.Battle.Action.Nodes+AssignValueToBB, Assembly-CSharp",
+                  "_blackboardKey": "damage_scale",
+                  "_value": 0.0,
+                  "_copyFromKey": "damage_scale_normal",
+                  "_assignString": false
+                }
+              ]
+            }
+          ],
+          "_failNodes": [
+            {
+              "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+              "_conditionNode": {
+                "$type": "Torappu.Battle.Action.Nodes+AutochessFilterByChessLevel, Assembly-CSharp",
+                "_targetType": "BUFF_OWNER",
+                "_condType": "EQUALS",
+                "_levelToCompare": 2
+              },
+              "_succeedNodes": [
+                {
+                  "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+                  "_conditionNode": {
+                    "$type": "Torappu.Battle.Action.Nodes+FilterByTargetDataLevel, Assembly-CSharp",
+                    "_target": "BUFF_OWNER",
+                    "_condType": "EQUALS",
+                    "_level": 55
+                  },
+                  "_succeedNodes": [
+                    {
+                      "$type": "Torappu.Battle.Action.Nodes+AssignValueToBB, Assembly-CSharp",
+                      "_blackboardKey": "damage_scale",
+                      "_value": 0.0,
+                      "_copyFromKey": "damage_scale_extra",
+                      "_assignString": false
+                    }
+                  ],
+                  "_failNodes": [
+                    {
+                      "$type": "Torappu.Battle.Action.Nodes+AssignValueToBB, Assembly-CSharp",
+                      "_blackboardKey": "damage_scale",
+                      "_value": 0.0,
+                      "_copyFromKey": "damage_scale_normal",
+                      "_assignString": false
+                    }
+                  ]
+                }
+              ],
+              "_failNodes": [
+                {
+                  "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+                  "_conditionNode": {
+                    "$type": "Torappu.Battle.Action.Nodes+AutochessFilterByChessLevel, Assembly-CSharp",
+                    "_targetType": "BUFF_OWNER",
+                    "_condType": "GE",
+                    "_levelToCompare": 3
+                  },
+                  "_succeedNodes": [
+                    {
+                      "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+                      "_conditionNode": {
+                        "$type": "Torappu.Battle.Action.Nodes+FilterByTargetDataLevel, Assembly-CSharp",
+                        "_target": "BUFF_OWNER",
+                        "_condType": "EQUALS",
+                        "_level": 60
+                      },
+                      "_succeedNodes": [
+                        {
+                          "$type": "Torappu.Battle.Action.Nodes+AssignValueToBB, Assembly-CSharp",
+                          "_blackboardKey": "damage_scale",
+                          "_value": 0.0,
+                          "_copyFromKey": "damage_scale_extra",
+                          "_assignString": false
+                        }
+                      ],
+                      "_failNodes": [
+                        {
+                          "$type": "Torappu.Battle.Action.Nodes+AssignValueToBB, Assembly-CSharp",
+                          "_blackboardKey": "damage_scale",
+                          "_value": 0.0,
+                          "_copyFromKey": "damage_scale_normal",
+                          "_assignString": false
+                        }
+                      ]
+                    }
+                  ],
+                  "_failNodes": [
+                    {
+                      "$type": "Torappu.Battle.Action.Nodes+AssignValueToBB, Assembly-CSharp",
+                      "_blackboardKey": "damage_scale",
+                      "_value": 0.0,
+                      "_copyFromKey": "damage_scale_normal",
+                      "_assignString": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       ]
     }
   },
@@ -286781,16 +286924,14 @@
     "effectKey": "",
     "onEventPriority": "DEFAULT",
     "eventToActions": {
-      "ON_TAKE_EP_DAMAGE": [
+      "ON_BUFF_START": [
         {
-          "$type": "Torappu.Battle.Action.Nodes+EpDamageScale, Assembly-CSharp",
-          "_filterElementType": false,
-          "_elementType": "DARK",
-          "_filterApplyWay": false,
-          "_applyWayFilter": "NONE",
-          "_isOneMinus": false,
-          "_isStackable": false,
-          "_isValidStackCnt": false
+          "$type": "Torappu.Battle.Action.Nodes+CreateBuffById, Assembly-CSharp",
+          "_buffKey": "weak[ep][inf]",
+          "_buffOwner": "BUFF_OWNER",
+          "_isDerivedBuff": true,
+          "_loadFromBlackboard": false,
+          "_finishDerivedBuffIfParentFinish": true
         }
       ]
     }
@@ -346043,70 +346184,82 @@
     "eventToActions": {
       "ON_BUFF_START": [
         {
-          "$type": "Torappu.Battle.Action.Nodes+AddAttractToTargetNearestTileUseAbilitySelector, Assembly-CSharp",
-          "_sourceType": "BUFF_SOURCE",
-          "_targetType": "BUFF_OWNER",
-          "_abilityName": "AttractCore"
-        },
-        {
-          "$type": "Torappu.Battle.Action.Nodes+PlayAudio, Assembly-CSharp",
-          "_target": "BUFF_OWNER",
-          "_audioSignal": "sbell2_skill3_attract_audio"
-        },
-        {
-          "$type": "Torappu.Battle.Action.Nodes+CreateBuff, Assembly-CSharp",
-          "_buff": {
-            "attributes": {
-              "abnormalFlags": [],
-              "abnormalImmunes": [],
-              "abnormalAntis": [],
-              "abnormalCombos": [],
-              "abnormalComboImmunes": [],
-              "attributeModifiers": []
-            },
-            "buffKey": "sbell2_s3[attract_effect]",
-            "loadFromDB": false,
-            "isDurableBuff": false,
-            "isDamageMissable": false,
-            "isSilenceable": false,
-            "isStunnable": false,
-            "isFreezable": false,
-            "isLevitatable": false,
-            "statusResistable": "AUTOMATIC",
-            "templateKey": "empty",
-            "disableOverride": false,
-            "overrideKey": null,
-            "overrideType": "DEFAULT",
-            "maxStackCnt": 1,
-            "refreshRemainingTimeWhenStackMax": false,
-            "clearAllStackCntWhenTimeUp": false,
-            "maxValidStackCnt": -1,
-            "independentCharacterSource": false,
-            "overrideEffectKey": "sbell2_skill_03_hint",
-            "overrideOnEventPriority": false,
-            "onEventPriority": "DEFAULT",
-            "audioSignal": null,
-            "lifeTimeType": "INFINITY",
-            "takeSnapshotWhenExtend": false,
-            "durationKey": null,
-            "lifeTime": 0.0,
-            "triggerLifeType": "IMMEDIATELY",
-            "triggerCnt": 0,
-            "triggerInterval": -1.0,
-            "waitFirstTriggerInterval": true,
-            "firstTriggerInterval": -1.0,
-            "priority": -1,
-            "priorityBBKeys": [],
-            "stripBlackboardParamsWithBuffKey": false,
-            "blackboard": []
+          "$type": "Torappu.Battle.Action.Nodes+IfElse, Assembly-CSharp",
+          "_conditionNode": {
+            "$type": "Torappu.Battle.Action.Nodes+AddAttractToTargetNearestTileUseAbilitySelector, Assembly-CSharp",
+            "_sourceType": "BUFF_SOURCE",
+            "_targetType": "BUFF_OWNER",
+            "_abilityName": "AttractCore"
           },
-          "_buffOwner": "BUFF_OWNER",
-          "_useSpecialBuffSource": false,
-          "_specialBuffSource": "BUFF_SOURCE",
-          "_isDerivedBuff": true,
-          "_finishDerivedBuffIfParentFinish": true,
-          "_inherateSourceProjectileFromParentBuff": false,
-          "_hookEffectKeyFromSourceProjectile": false
+          "_succeedNodes": [
+            {
+              "$type": "Torappu.Battle.Action.Nodes+PlayAudio, Assembly-CSharp",
+              "_target": "BUFF_OWNER",
+              "_audioSignal": "sbell2_skill3_attract_audio"
+            },
+            {
+              "$type": "Torappu.Battle.Action.Nodes+CreateBuff, Assembly-CSharp",
+              "_buff": {
+                "attributes": {
+                  "abnormalFlags": [],
+                  "abnormalImmunes": [],
+                  "abnormalAntis": [],
+                  "abnormalCombos": [],
+                  "abnormalComboImmunes": [],
+                  "attributeModifiers": []
+                },
+                "buffKey": "sbell2_s3[attract_effect]",
+                "loadFromDB": false,
+                "isDurableBuff": false,
+                "isDamageMissable": false,
+                "isSilenceable": false,
+                "isStunnable": false,
+                "isFreezable": false,
+                "isLevitatable": false,
+                "statusResistable": "AUTOMATIC",
+                "templateKey": "empty",
+                "disableOverride": false,
+                "overrideKey": null,
+                "overrideType": "DEFAULT",
+                "maxStackCnt": 1,
+                "refreshRemainingTimeWhenStackMax": false,
+                "clearAllStackCntWhenTimeUp": false,
+                "maxValidStackCnt": -1,
+                "independentCharacterSource": false,
+                "overrideEffectKey": "sbell2_skill_03_hint",
+                "overrideOnEventPriority": false,
+                "onEventPriority": "DEFAULT",
+                "audioSignal": null,
+                "lifeTimeType": "INFINITY",
+                "takeSnapshotWhenExtend": false,
+                "durationKey": null,
+                "lifeTime": 0.0,
+                "triggerLifeType": "IMMEDIATELY",
+                "triggerCnt": 0,
+                "triggerInterval": -1.0,
+                "waitFirstTriggerInterval": true,
+                "firstTriggerInterval": -1.0,
+                "priority": -1,
+                "priorityBBKeys": [],
+                "stripBlackboardParamsWithBuffKey": false,
+                "blackboard": []
+              },
+              "_buffOwner": "BUFF_OWNER",
+              "_useSpecialBuffSource": false,
+              "_specialBuffSource": "BUFF_SOURCE",
+              "_isDerivedBuff": true,
+              "_finishDerivedBuffIfParentFinish": true,
+              "_inherateSourceProjectileFromParentBuff": false,
+              "_hookEffectKeyFromSourceProjectile": false
+            }
+          ],
+          "_failNodes": [
+            {
+              "$type": "Torappu.Battle.Action.Nodes+FinishBuff, Assembly-CSharp",
+              "_decCntIfStack": false,
+              "_updateOverrideMap": true
+            }
+          ]
         }
       ]
     }
