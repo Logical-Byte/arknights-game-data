@@ -92,7 +92,10 @@
     "permanent_sidestory_28_zone2": "permanent_sidestory_28_i_portatori_dei_velluti",
     "permanent_sidestory_28_zone3": "permanent_sidestory_28_i_portatori_dei_velluti",
     "permanent_sidestory_29_zone1": "permanent_sidestory_29_Exodus_From_The_Pale_Sea",
-    "permanent_sidestory_29_zone2": "permanent_sidestory_29_Exodus_From_The_Pale_Sea"
+    "permanent_sidestory_29_zone2": "permanent_sidestory_29_Exodus_From_The_Pale_Sea",
+    "permanent_sidestory_30_zone1": "permanent_sidestory_30_Such_is_the_Joy_of_Our_Reunion",
+    "permanent_sidestory_30_zone2": "permanent_sidestory_30_Such_is_the_Joy_of_Our_Reunion",
+    "permanent_sidestory_30_zone3": "permanent_sidestory_30_Such_is_the_Joy_of_Our_Reunion"
   },
   "stageValidInfo": {
     "act9d0_01": {
@@ -5094,6 +5097,158 @@
     "act39side_ex08#f#": {
       "startTs": 1767297600,
       "endTs": -1
+    },
+    "act40side_st01": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_tr01": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_01": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_02": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_03": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_04": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_05": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_st02": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_06": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_07": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_08": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_09": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_st03": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_ex01": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_ex01#f#": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_ex02": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_ex02#f#": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_ex03": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_ex03#f#": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_ex04": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_ex04#f#": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_ex05": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_ex05#f#": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_ex06": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_ex06#f#": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_ex07": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_ex07#f#": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_ex08": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_ex08#f#": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_s01": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_s01#f#": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_s02": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_s02#f#": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_s03": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_s03#f#": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_s04": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_s04#f#": {
+      "startTs": 1770667200,
+      "endTs": -1
+    },
+    "act40side_mo01": {
+      "startTs": 1770667200,
+      "endTs": -1
     }
   },
   "stages": null,
@@ -5699,6 +5854,22 @@
       "trailStartTime": -1,
       "index": 29,
       "name": "出苍白海",
+      "haveTrail": false,
+      "customActId": null,
+      "customActType": "DEFAULT",
+      "trapDomainId": null
+    },
+    "permanent_sidestory_30_Such_is_the_Joy_of_Our_Reunion": {
+      "retroId": "permanent_sidestory_30_Such_is_the_Joy_of_Our_Reunion",
+      "type": "SIDESTORY",
+      "linkedActId": [
+        "act40side",
+        "act40sre"
+      ],
+      "startTime": 1770667200,
+      "trailStartTime": -1,
+      "index": 30,
+      "name": "相见欢",
       "haveTrail": false,
       "customActId": null,
       "customActType": "DEFAULT",
@@ -157352,6 +157523,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -157363,7 +157535,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -157406,6 +157578,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -157417,7 +157590,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -157435,6 +157608,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -157446,7 +157620,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -157479,6 +157653,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -157490,7 +157665,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -157528,6 +157703,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -157539,7 +157715,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -157577,6 +157753,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -157588,7 +157765,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -157621,6 +157798,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -157632,7 +157810,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -157670,6 +157848,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -157681,7 +157860,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -157724,6 +157903,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -157735,7 +157915,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -157778,6 +157958,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -157789,7 +157970,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -157862,6 +158043,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -157873,7 +158055,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -159113,6 +159295,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -159124,7 +159307,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -159142,6 +159325,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -159153,7 +159337,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -159187,6 +159371,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -159198,7 +159383,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -159216,6 +159401,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -159227,7 +159413,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -159261,6 +159447,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -159272,7 +159459,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -159290,6 +159477,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -159301,7 +159489,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -159335,6 +159523,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -159346,7 +159535,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -159364,6 +159553,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -159375,7 +159565,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -159409,6 +159599,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -159420,7 +159611,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -159454,6 +159645,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -159465,7 +159657,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -159499,6 +159691,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -159510,7 +159703,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -159533,6 +159726,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -159544,7 +159738,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -159578,6 +159772,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -159589,7 +159784,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
@@ -159612,6 +159807,7 @@
                     "playerSideMask": "ALL",
                     "sideType": "ALL",
                     "charIdFilter": null,
+                    "charIdExcludeFilter": null,
                     "enemyIdFilter": null,
                     "enemyIdExcludeFilter": null,
                     "enemyLevelTypeFilter": null,
@@ -159623,7 +159819,7 @@
                     "filterTagExcludeFilter": null,
                     "subProfessionExcludeFilter": null,
                     "mapTagFilter": null,
-                    "heightTypeMask": "NONE"
+                    "heightTypeMask": "ALL"
                   },
                   "blackboard": [
                     {
